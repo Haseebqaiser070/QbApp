@@ -2,7 +2,8 @@ import React from "react";
 import TextField from "@mui/material/TextField";
 import { Button, Box, Checkbox, Link } from "@mui/material";
 import image from "./images/image.png";
-import logo from "./images/logo.png";
+import logo from "./images/header.png";
+
 
 export default function Login() {
   return (
@@ -21,7 +22,8 @@ export default function Login() {
             overflow: "auto", // Add overflow auto to handle vertical overflow
           }}
         >
-          <img src={logo} alt="Logo" />
+          <img src={logo} alt="Logo" style={{ height: "100px" }}/>
+
           <br />
           <div>
             <p

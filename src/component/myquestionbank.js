@@ -19,7 +19,10 @@ import {
 import SearchIcon from "@mui/icons-material/Search";
 import Navbar from "./navbar";
 import Mainnavbar from "./navbarmain";
-import footor from "./images/footor.png";
+import footer from "./images/footor.png";
+
+
+
 
 const columns = [
   {
@@ -243,17 +246,18 @@ export default function Questionbank() {
           </TableContainer>
         </Paper>
       </div>
-      <div>
-        <img
-          style={{
-            marginTop: "50px",
-            marginBottom: "25px",
-            maxWidth: "100%",
-            height: "auto",
-          }}
-          src={footor}
-        />
-      </div>
+      <div >
+          <img
+            style={{
+              marginTop: "30px",
+              marginBottom: "15px",
+              width: "100%",
+              height: "auto",
+            }}
+            src={footer}
+            alt="Footer"
+          />
+        </div>
     </div>
   );
 }

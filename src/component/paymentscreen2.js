@@ -22,9 +22,12 @@ import image from "./images/image.png";
 import logo from "./images/logo.png";
 import Navbar from "./navbar";
 import credit from "./images/credit.png";
-import footer from "./images/footer.png";
 import visa from "./images/visa.png";
 import pay from "./images/mobile-payment 1.png";
+import footer from "./images/footor.png";
+
+
+
 import Snavbar from "./navsignup";
 export default function Creditcard() {
   const [cardName, setCardName] = useState("");
@@ -254,9 +257,18 @@ export default function Creditcard() {
           </div>
         </div>
       </div>
-      <div>
-        <img src={footer} />
-      </div>
+      <div >
+          <img
+            style={{
+              marginTop: "30px",
+              marginBottom: "15px",
+              width: "100%",
+              height: "auto",
+            }}
+            src={footer}
+            alt="Footer"
+          />
+        </div>
     </div>
   );
 }

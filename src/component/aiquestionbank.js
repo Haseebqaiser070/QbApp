@@ -12,7 +12,9 @@ import DoubleArrowIcon from "@mui/icons-material/DoubleArrow";
 import AttachmentIcon from "@mui/icons-material/Attachment";
 import Navbar from "./navbar";
 import Mainnavbar from "./navbarmain";
-import footor from "./images/footor.png";
+import footer from "./images/footor.png";
+
+
 
 export default function Aibank() {
   return (
@@ -105,17 +107,18 @@ export default function Aibank() {
           </FormControl>{" "}
         </Box>
       </Container>
-      <div>
-        <img
-          style={{
-            marginTop: "50px",
-            marginBottom: "25px",
-            maxWidth: "100%",
-            height: "auto",
-          }}
-          src={footor}
-        />
-      </div>
+      <div >
+          <img
+            style={{
+              marginTop: "30px",
+              marginBottom: "15px",
+              width: "100%",
+              height: "auto",
+            }}
+            src={footer}
+            alt="Footer"
+          />
+        </div>
     </div>
   );
 }

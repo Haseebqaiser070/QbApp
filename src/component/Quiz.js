@@ -17,7 +17,9 @@ import {
 } from "@mui/material";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import Navbar from "./navbar";
-import footor from "./images/footor.png";
+import footer from "./images/footor.png";
+
+
 import Mainnavbar from "./navbarmain";
 
 const questions = [
@@ -221,17 +223,18 @@ export default function QuizPage() {
           </CardContent>
         </div>
       </Container>
-      <div>
-        <img
-          style={{
-            marginTop: "50px",
-            marginBottom: "25px",
-            maxWidth: "100%",
-            height: "auto",
-          }}
-          src={footor}
-        />
-      </div>
+      <div >
+          <img
+            style={{
+              marginTop: "30px",
+              marginBottom: "15px",
+              width: "100%",
+              height: "auto",
+            }}
+            src={footer}
+            alt="Footer"
+          />
+        </div>
     </div>
   );
 }

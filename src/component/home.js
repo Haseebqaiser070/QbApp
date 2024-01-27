@@ -4,7 +4,7 @@ import { Button, Box, Checkbox, Link, Stack } from "@mui/material";
 import image from "./images/image.png";
 import logo from "./images/logo.png";
 import Navbar from "./navbar";
-import footer from "./images/footer.png";
+import footer from "./images/footor.png";
 
 export default function Home() {
   return (
@@ -12,7 +12,7 @@ export default function Home() {
       <div style={{ marginTop: "100px" }}>
         <Navbar />
 
-        <div>
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
           <p
             style={{
               fontFamily: "Poppins",
@@ -38,7 +38,7 @@ export default function Home() {
           </p>
         </div>
         <div>
-          <Stack spacing={5} direction="row" style={{ marginLeft: "85px" }}>
+          <Stack spacing={5} direction="row" style={{ textAlign: "center", justifyContent: "center", alignItems: "center" }}>
             <Button
               href="/Uploadquebank"
               style={{
@@ -101,15 +101,16 @@ export default function Home() {
             </Button>
           </Stack>
         </div>
-        <div>
+        <div style={{ position: "absolute", bottom: 0, left: 0, right: 0 }}>
           <img
             style={{
               marginTop: "50px",
               marginBottom: "25px",
-              maxWidth: "100%",
+              width: "100%",
               height: "auto",
             }}
             src={footer}
+            alt="Footer"
           />
         </div>
       </div>

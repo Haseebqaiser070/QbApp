@@ -15,7 +15,8 @@ import Navbar from "./navbar";
 import pay from "./images/mobile-payment 1.png";
 import { Card } from "react-bootstrap";
 import Mainnavbar from "./navbarmain";
-import footor from "./images/footor.png";
+import footer from "./images/footor.png";
+
 
 export default function Uploads1() {
   return (
@@ -146,10 +147,16 @@ export default function Uploads1() {
             </Card>
           </div>
         </div>
-        <div>
+        <div >
           <img
-            style={{ marginTop: "50px", marginBottom: "25px" }}
-            src={footor}
+            style={{
+              marginTop: "30px",
+              marginBottom: "15px",
+              width: "100%",
+              height: "auto",
+            }}
+            src={footer}
+            alt="Footer"
           />
         </div>
       </div>

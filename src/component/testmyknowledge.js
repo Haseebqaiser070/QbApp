@@ -21,9 +21,8 @@ import logo from "./images/logo.png";
 import Navbar from "./navbar";
 import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
-import footor from "./images/footor.png";
 import QueuePlayNextOutlinedIcon from "@mui/icons-material/QueuePlayNextOutlined";
-import footer from "./images/footer.png";
+import footer from "./images/footor.png";
 import LiveHelpOutlinedIcon from "@mui/icons-material/LiveHelpOutlined";
 import NaturePeopleOutlinedIcon from "@mui/icons-material/NaturePeopleOutlined";
 import Mainnavbar from "./navbarmain";
@@ -234,15 +233,16 @@ export default function Testknowledge() {
             </Button>
           </div>
         </div>{" "}
-        <div>
+        <div >
           <img
             style={{
-              marginTop: "50px",
-              marginBottom: "25px",
-              maxWidth: "100%",
+              marginTop: "30px",
+              marginBottom: "15px",
+              width: "100%",
               height: "auto",
             }}
-            src={footor}
+            src={footer}
+            alt="Footer"
           />
         </div>
       </div>

@@ -2,7 +2,7 @@ import React from "react";
 import TextField from "@mui/material/TextField";
 import { Button, Box, Typography } from "@mui/material";
 import image from "./images/image.png";
-import logo from "./images/logo.png";
+import logo from "./images/header.png";
 
 export default function Signup() {
   return (
@@ -18,7 +18,7 @@ export default function Signup() {
             paddingTop: "100px",
           }}
         >
-          <img src={logo} alt="Logo" />
+          <img src={logo} alt="Logo" style={{ height: "100px" }}/>
           <br />
           <div>
             <p

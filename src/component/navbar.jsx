@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "./images/logo.png";
+import header from "./images/header.png";
 import { Button } from "@mui/material";
 import zIndex from "@mui/material/styles/zIndex";
 
@@ -27,7 +27,7 @@ export default function Navbar() {
         }}
       >
         <span className="logo">
-          <img src={logo} />
+          <img src={header} style={{ height: "80px" }} alt="Logo" />
         </span>
         <div className="links">
           <a href="/Login">

@@ -15,6 +15,11 @@ import Navbar from "./navbar";
 import pay from "./images/mobile-payment 1.png";
 import { Card } from "react-bootstrap";
 import Snavbar from "./navsignup";
+import footer from "./images/footor.png";
+
+
+
+
 export default function Payments1() {
   return (
     <div>
@@ -142,6 +147,18 @@ export default function Payments1() {
               </Stack>
             </Card>
           </div>
+        </div>
+        <div >
+          <img
+            style={{
+              marginTop: "30px",
+              marginBottom: "15px",
+              width: "100%",
+              height: "auto",
+            }}
+            src={footer}
+            alt="Footer"
+          />
         </div>
       </div>
     </div>

@@ -1,6 +1,5 @@
 import React, { useRef } from "react";
 import TextField from "@mui/material/TextField";
-import footor from "./images/footor.png";
 import { styled } from "@mui/material/styles";
 import { Button, Box, Checkbox, Link, Divider } from "@mui/material";
 import image from "./images/image.png";
@@ -8,6 +7,9 @@ import logo from "./images/logo.png";
 import upload from "./images/upload (1) 1.png";
 import Payments1 from "./paymentscreen1";
 import Mainnavbar from "./navbarmain";
+import footer from "./images/footor.png";
+
+
 const VisuallyHiddenInput = styled("input")({
   clip: "rect(0 0 0 0)",
   clipPath: "inset(50%)",
@@ -158,17 +160,18 @@ export default function Uploadquebank() {
           </div>
         </div>
       </div>
-      <div>
-        <img
-          style={{
-            marginTop: "50px",
-            marginBottom: "25px",
-            maxWidth: "100%",
-            height: "auto",
-          }}
-          src={footor}
-        />
-      </div>
+      <div >
+          <img
+            style={{
+              marginTop: "30px",
+              marginBottom: "15px",
+              width: "100%",
+              height: "auto",
+            }}
+            src={footer}
+            alt="Footer"
+          />
+        </div>
     </div>
   );
 }
