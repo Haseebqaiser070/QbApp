@@ -18,8 +18,6 @@ import {
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import Navbar from "./navbar";
 import footer from "./images/footor.png";
-
-
 import Mainnavbar from "./navbarmain";
 
 const questions = [
