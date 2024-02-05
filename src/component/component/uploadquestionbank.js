@@ -17,8 +17,6 @@ import logo from "./images/logo.png";
 import upload from "./images/upload (1) 1.png";
 import Payments1 from "./paymentscreen1";
 import Mainnavbar from "./navbarmain";
-
-import Footer from "./footer";
 const VisuallyHiddenInput = styled("input")({
   clip: "rect(0 0 0 0)",
   clipPath: "inset(50%)",
@@ -135,9 +133,7 @@ export default function Uploadquebank() {
               width: "224px",
               height: "48px",
               float: "left",
-
-              // paddingLeft: isSmallScreen ? "60px" : "80px",
-              marginLeft: isSmallScreen ? "80px" : "80px",
+              marginLeft: isSmallScreen ? "2.5rem" : "5.5rem",
               padding: isSmallScreen ? "1rem" : "1.5rem", // Relative padding
             }}
             href="/Questionbank"
@@ -152,7 +148,7 @@ export default function Uploadquebank() {
               //  borderRadius: "100px",
               //marginBottom: 10,
               //float: "center",
-              marginLeft: isSmallScreen ? "70px" : "40px",
+              marginLeft: isSmallScreen ? "2.0rem" : "2.5rem",
             }}
           >
             <div className="col-md-12">
@@ -184,7 +180,15 @@ export default function Uploadquebank() {
         </div>
       </div>
       <div>
-        <Footer />
+        <img
+          style={{
+            marginTop: "50px",
+            marginBottom: "25px",
+            maxWidth: "100%",
+            height: "auto",
+          }}
+          src={footor}
+        />
       </div>
     </div>
   );

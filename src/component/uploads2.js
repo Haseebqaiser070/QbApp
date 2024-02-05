@@ -13,6 +13,8 @@ import {
   Typography,
   TextField,
   FormControl,
+  useMediaQuery,
+  createTheme,
   InputLabel,
   Select,
   MenuItem,
@@ -23,12 +25,15 @@ import image from "./images/image.png";
 import logo from "./images/logo.png";
 import Navbar from "./navbar";
 import credit from "./images/credit.png";
-import footer from "./images/footor.png";
-
+import Footer from "./footer";
+import footer from "./images/footer.png";
 import visa from "./images/visa.png";
 import pay from "./images/mobile-payment 1.png";
 import Mainnavbar from "./navbarmain";
+
+const theme = createTheme();
 export default function Uploads2() {
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
   const [cardName, setCardName] = useState("");
   const [cardNumber, setCardNumber] = useState("");
   const [expiryDate, setExpiryDate] = useState("");
@@ -52,24 +57,33 @@ export default function Uploads2() {
         <div
           className="row"
           style={{
-            marginLeft: "50px",
-            marginRight: "50px",
-            marginTop: "70px",
+            marginLeft: isSmallScreen ? "20px" : "50px",
+            marginRight: isSmallScreen ? "20px" : "50px",
+            marginTop: isSmallScreen ? "5px" : "20px",
           }}
         >
           <div
-            className="col-md-6"
-            style={{ paddingBottom: "30px", marginTop: "50px" }}
+            className="col-md-6 col-sm-6"
+            style={{
+              paddingBottom: isSmallScreen ? "0.1rem" : "1.875rem",
+              marginTop: "50px",
+            }}
           >
-            <img src={pay} width="150px" height={"160px"}></img>
+            <img
+              src={pay}
+              style={{
+                width: isSmallScreen ? " 6.5rem" : "9.375rem",
+                height: isSmallScreen ? " 7.0rem" : "10rem",
+              }}
+            ></img>
             <p
               style={{
                 color: " #333333",
                 font: "Poppins",
                 padding: "1px",
-                lineHeight: "50.5px",
+                lineHeight: isSmallScreen ? "2.5rem" : "3.15rem",
                 fontWeight: 700,
-                fontSize: "35px",
+                fontSize: isSmallScreen ? "1.7rem" : "2.8rem", // Relative font size
               }}
             >
               Please make a small contribution to hosting costs for this site.
@@ -83,7 +97,7 @@ export default function Uploads2() {
                 // padding: "15px",
                 lineHeight: "27.5px",
                 fontWeight: 400,
-                fontSize: "20px",
+                fontSize: isSmallScreen ? "1.0rem" : "1.25rem", // Relative font size
               }}
             >
               Thank you for choosing to upload a Question Bank! Before
@@ -91,16 +105,18 @@ export default function Uploads2() {
               integration of your questions.
             </p>
           </div>
-          <div className="col-md-6">
+          <div className="col-md-6 col-sm-6  d-flex justify-content-center">
             <Card
               style={{
-                width: "500px",
-                height: "640px",
-                padding: 40,
+                // width: "500px",
+                // height: "640px",
+                // padding: 40,
+                padding: isSmallScreen ? "1rem" : "2.25rem",
+                marginTop: isSmallScreen ? "2.5rem" : "4.5rem",
                 backgroundColor: "#D4ECFF",
                 borderRadius: "20px",
-                marginRight: "20px",
-                marginBottom: "80px",
+                marginRight: isSmallScreen ? "0rem" : "1.25rem",
+                //marginBottom: "80px",
               }}
             >
               <p
@@ -108,10 +124,11 @@ export default function Uploads2() {
                   color: " #282828",
                   font: "Poppins",
                   padding: "1px",
-                  lineHeight: "50.5px",
+                  //lineHeight: isSmallScreen ? "2.5rem" : "3.15rem",
                   fontWeight: 700,
                   textAlign: "center",
-                  fontSize: "48px",
+
+                  fontSize: isSmallScreen ? "1.7rem" : "3rem", // Relative font size
                   marginTop: "20px",
                 }}
               >
@@ -120,11 +137,19 @@ export default function Uploads2() {
               <Stack direction="row" spacing={9} style={{ marginTop: "50px" }}>
                 <img
                   src={credit}
-                  width="163px"
-                  height={"20px"}
-                  style={{ marginRight: "100px" }}
+                  style={{
+                    marginRight: isSmallScreen ? " 0rem" : "9.0rem",
+                    width: isSmallScreen ? " 7rem" : "10rem",
+                    height: isSmallScreen ? " 0.8rem" : "1.25rem",
+                  }}
                 ></img>
-                <img src={visa} width="140px" height={"23px"}></img>
+                <img
+                  src={visa}
+                  style={{
+                    width: isSmallScreen ? " 6.5rem" : "8.75rem",
+                    height: isSmallScreen ? " 1.0rem" : "1.25rem",
+                  }}
+                ></img>
               </Stack>
               <Chip
                 label="Pay securely with your Bank Account using Visa or Mastercard"
@@ -143,7 +168,7 @@ export default function Uploads2() {
                   height: "80px",
                   lineHeight: "20.5px",
                   fontWeight: 400,
-                  fontSize: "14px",
+                  fontSize: isSmallScreen ? "0.7rem" : "1rem", // Relative font size
                   height: "50px",
                 }}
               />
@@ -155,10 +180,9 @@ export default function Uploads2() {
                     InputProps={{
                       style: {
                         borderRadius: "16px",
+                        fontSize: isSmallScreen ? "0.8rem" : "1rem", // Adjust the font size for smaller screens
                       },
                     }}
-                    //value={cardNumber}
-                    //onChange={(event) => setCardNumber(event.target.value)}
                     required
                   />
                 </FormControl>
@@ -169,15 +193,16 @@ export default function Uploads2() {
                     InputProps={{
                       style: {
                         borderRadius: "16px",
-                        // width: "358px",
-                        // height: "40px",
+                        fontSize: isSmallScreen ? "0.8rem" : "1rem", // Adjust the font size for smaller screens
                       },
-                    }} //value={cardName}
-                    //onChange={(event) => setCardName(event.target.value)}
+                    }}
                     required
                   />
                 </FormControl>
-                <FormControl sx={{ marginTop: 1 }}>
+                <FormControl
+                  className="d-flex justify-content-center"
+                  sx={{ marginTop: 1 }}
+                >
                   <Stack spacing={4} direction="row">
                     <TextField
                       fullWidth
@@ -185,30 +210,23 @@ export default function Uploads2() {
                       variant="outlined"
                       InputProps={{
                         style: {
-                          // width: "171px",
-                          //height: "40px",
                           borderRadius: "16px",
+                          fontSize: isSmallScreen ? "0.8rem" : "1rem", // Adjust the font size for smaller screens
                         },
-                      }} //color='secondary'
-                      //  label="Expirey Date"
-                      //onChange={e => setFirstName(e.target.value)}
-                      //value={firstName}
-                      //fullWidth
+                      }}
                       required
                     />
                     <TextField
                       fullWidth
                       type="text"
                       variant="outlined"
+                      label="CVV Code"
                       InputProps={{
                         style: {
                           borderRadius: "16px",
+                          fontSize: isSmallScreen ? "0.8rem" : "1rem", // Adjust the font size for smaller screens
                         },
-                      }} // color='secondary'
-                      label="CVV"
-                      //onChange={e => setLastName(e.target.value)}
-                      //value={lastName}
-                      //fullWidth
+                      }}
                       required
                     />
                   </Stack>
@@ -218,6 +236,7 @@ export default function Uploads2() {
                     // marginRight: "180px",
                     color: "#000000",
                     textDecoration: "none",
+                    fontSize: isSmallScreen ? "0.7rem" : "1rem", // Relative font size
                   }}
                 >
                   <Checkbox /> Save card for future payments
@@ -265,18 +284,9 @@ export default function Uploads2() {
           </div>
         </div>
       </div>
-      <div >
-          <img
-            style={{
-              marginTop: "30px",
-              marginBottom: "15px",
-              width: "100%",
-              height: "auto",
-            }}
-            src={footer}
-            alt="Footer"
-          />
-        </div>
+      <div>
+        <Footer />{" "}
+      </div>
     </div>
   );
 }

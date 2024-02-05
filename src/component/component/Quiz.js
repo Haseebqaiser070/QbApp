@@ -20,8 +20,6 @@ import {
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import Navbar from "./navbar";
 import footor from "./images/footor.png";
-
-import Footer from "./footer";
 import Mainnavbar from "./navbarmain";
 
 const questions = [
@@ -106,7 +104,6 @@ export default function QuizPage() {
               paddingLeft: isSmallScreen ? "0rem" : "1rem",
               paddingRight: isSmallScreen ? "0rem" : "1rem",
               margin: isSmallScreen ? "0rem" : "1.5rem",
-              marginTop: isSmallScreen ? "130px" : "150px",
             }}
           >
             <Stepper
@@ -242,9 +239,16 @@ export default function QuizPage() {
           </CardContent>
         </div>
       </Container>
-
-      <div >
-        <Footer />
+      <div>
+        <img
+          style={{
+            marginTop: "50px",
+            marginBottom: "25px",
+            maxWidth: "100%",
+            height: "auto",
+          }}
+          src={footor}
+        />
       </div>
     </div>
   );

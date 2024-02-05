@@ -15,8 +15,6 @@ import React from "react";
 import Image from "./images/image.png";
 import Navbar from "./navbar";
 import Mainnavbar from "./navbarmain";
-
-import Footer from "./footer";
 import footor from "./images/footor.png";
 export default function Profile() {
   const theme = useTheme();
@@ -343,7 +341,15 @@ export default function Profile() {
         </Card>
       </Card>
       <div>
-        <Footer />
+        <img
+          style={{
+            marginTop: "50px",
+            marginBottom: "25px",
+            maxWidth: "100%",
+            height: "auto",
+          }}
+          src={footor}
+        />
       </div>
     </div>
   );

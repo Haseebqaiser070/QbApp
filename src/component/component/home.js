@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from "@mui/material";
 import Navbar from "./navbar";
-import Footer from "./footer";
+import footor from "./images/footor.png";
 
 import { useMediaQuery, createTheme, ThemeProvider } from "@mui/material";
 
@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <ThemeProvider theme={theme}>
       <div>
-        <div style={{ marginTop: "130px" }} className="footerfix">
+        <div style={{ marginTop: "100px" }}>
           <Navbar />
 
           <div>
@@ -26,9 +26,7 @@ export default function Home() {
                 lineHeight: isSmallScreen ? 2 : 1.5,
                 letterSpacing: "0em",
                 textAlign: "center",
-                margin: isSmallScreen ? "0px" : "50px",
-
-                marginTop: isSmallScreen ? "60px" : "0px",
+                margin: isSmallScreen ? 0 : "50px",
                 padding: isSmallScreen ? "1rem" : "2rem",
                 wordWrap: "break-word",
                 maxWidth: "100%",
@@ -49,7 +47,6 @@ export default function Home() {
                 flexDirection: "row",
                 flexWrap: "wrap",
                 justifyContent: "center",
-                marginTop: isSmallScreen ? "50px" : "0px",
               }}
             >
               <Button
@@ -118,7 +115,19 @@ export default function Home() {
               </Button>
             </div>
           </div>
-          <Footer />
+
+          <div>
+            <img
+              style={{
+                marginTop: "50px",
+                marginBottom: "25px",
+                maxWidth: "100%",
+                height: "auto",
+              }}
+              src={footor}
+              alt="Footor"
+            />
+          </div>
         </div>
       </div>
     </ThemeProvider>

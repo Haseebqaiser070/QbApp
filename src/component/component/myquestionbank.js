@@ -23,8 +23,6 @@ import Navbar from "./navbar";
 import Mainnavbar from "./navbarmain";
 import footor from "./images/footor.png";
 
-import Footer from "./footer";
-
 const columns = [
   {
     id: "checkbox",
@@ -232,7 +230,16 @@ export default function Questionbank() {
         </Paper>
       </div>
       <div>
-        <Footer />{" "}
+        <img
+          style={{
+            marginTop: "50px",
+            marginBottom: "25px",
+            maxWidth: "100%",
+            height: "auto",
+          }}
+          src={footor}
+          alt="Footer"
+        />
       </div>
     </div>
   );

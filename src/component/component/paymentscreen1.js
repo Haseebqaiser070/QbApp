@@ -17,17 +17,17 @@ import logo from "./images/logo.png";
 import Navbar from "./navbar";
 import pay from "./images/mobile-payment 1.png";
 import { Card } from "react-bootstrap";
-import Mainnavbar from "./navbarmain";
+import Snavbar from "./navsignup";
 import footor from "./images/footor.png";
-import Footer from "./footer";
+
 const theme = createTheme();
-export default function Uploads1() {
+export default function Payments1() {
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
 
   return (
     <div>
       <div style={{ overflow: "hidden", marginTop: "100px" }}>
-        <Mainnavbar />
+        <Snavbar />
 
         <div
           className="row"
@@ -58,7 +58,7 @@ export default function Uploads1() {
                 fontSize: isSmallScreen ? "1.7rem" : "2.8rem", // Relative font size
               }}
             >
-              Please make a small contribution to hosting costs for this site.
+              Support this site with a small contribution to hosting cost
             </p>
             <p
               style={{
@@ -72,9 +72,8 @@ export default function Uploads1() {
                 fontSize: isSmallScreen ? "1.0rem" : "1.25rem", // Relative font size
               }}
             >
-              Thank you for choosing to upload a Question Bank! Before
-              proceeding, a small fee is required to cover the processing and
-              integration of your questions.
+              Take the first step towards enhancing our collective knowledge.
+              Register, contribute, and empower learning!
             </p>
           </div>
           <div className="col-md-6">
@@ -87,7 +86,7 @@ export default function Uploads1() {
                 marginTop: isSmallScreen ? "1rem" : "4.5rem",
               }}
             >
-              <a href="/Uploads2" style={{ textDecoration: "none" }}>
+              <a href="/Creditcard" style={{ textDecoration: "none" }}>
                 <Typography
                   component="div"
                   variant="body1"
@@ -169,7 +168,10 @@ export default function Uploads1() {
           </div>
         </div>
         <div>
-          <Footer />{" "}
+          <img
+            style={{ marginTop: "50px", marginBottom: "25px" }}
+            src={footor}
+          />
         </div>
       </div>
     </div>

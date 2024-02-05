@@ -27,14 +27,11 @@ import Navbar from "./navbar";
 import credit from "./images/credit.png";
 import footer from "./images/footer.png";
 import visa from "./images/visa.png";
-import Snavbar from "./navsignup";
 import pay from "./images/mobile-payment 1.png";
 import Mainnavbar from "./navbarmain";
 
-import Footer from "./footer";
-
 const theme = createTheme();
-export default function Creditcard() {
+export default function Uploads2() {
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
   const [cardName, setCardName] = useState("");
   const [cardNumber, setCardNumber] = useState("");
@@ -54,7 +51,7 @@ export default function Creditcard() {
   return (
     <div>
       <div style={{ overflow: "hidden", marginTop: "100px" }}>
-        <Snavbar />
+        <Mainnavbar />
 
         <div
           className="row"
@@ -88,7 +85,7 @@ export default function Creditcard() {
                 fontSize: isSmallScreen ? "1.7rem" : "2.8rem", // Relative font size
               }}
             >
-              Support this site with a small contribution to hosting cost
+              Please make a small contribution to hosting costs for this site.
             </p>
             <p
               style={{
@@ -102,8 +99,9 @@ export default function Creditcard() {
                 fontSize: isSmallScreen ? "1.0rem" : "1.25rem", // Relative font size
               }}
             >
-              Take the first step towards enhancing our collective knowledge.
-              Register, contribute, and empower learning!
+              Thank you for choosing to upload a Question Bank! Before
+              proceeding, a small fee is required to cover the processing and
+              integration of your questions.
             </p>
           </div>
           <div className="col-md-6 col-sm-6  d-flex justify-content-center">
@@ -286,7 +284,15 @@ export default function Creditcard() {
         </div>
       </div>
       <div>
-        <Footer />
+        <img
+          style={{
+            marginTop: "50px",
+            marginBottom: "25px",
+            maxWidth: "100%",
+            height: "auto",
+          }}
+          src={footor}
+        />
       </div>
     </div>
   );

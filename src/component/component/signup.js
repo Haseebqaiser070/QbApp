@@ -1,61 +1,63 @@
 import React from "react";
 import TextField from "@mui/material/TextField";
-import {
-  Button,
-  Box,
-  Checkbox,
-  useMediaQuery,
-  createTheme,
-  Link,
-} from "@mui/material";
+import { Button, Box, Typography } from "@mui/material";
 import image from "./images/image.png";
-import logo from "./images/header.png";
+import logo from "./images/logo.png";
 
-const theme = createTheme();
-export default function Login() {
-  const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
+export default function Signup() {
   return (
     <div style={{ overflow: "hidden" }}>
       <div className="row">
         <div
           className="col-md-6"
           style={{
-            height: "100%",
             display: "flex",
             flexDirection: "column",
-            justifyContent: "center",
             alignItems: "center",
             textAlign: "center",
             paddingTop: "100px",
-            overflow: "auto", // Add overflow auto to handle vertical overflow
           }}
         >
-          <img src={logo} width="70%" alt="Logo" />
+          <img src={logo} alt="Logo" />
           <br />
           <div>
             <p
               style={{
-                paddingTop: "10px",
+                paddingTop: "30px",
                 lineHeight: "22.5px",
                 fontSize: "15px",
               }}
             >
               Welcome back!
-              <br />
-              Please Login/Signup to your account.
+              <br /> Please Login/Signup to your account.
             </p>
           </div>
+
           <Box
             sx={{
+              width: "80%",
               maxWidth: "100%",
               padding: "9px",
-              width: "80%",
               justifyContent: "center",
               alignItems: "center",
               textAlign: "center",
               paddingLeft: "15px",
             }}
           >
+            <TextField
+              fullWidth
+              id="outlined-basic"
+              label="Name"
+              style={{ paddingBottom: "10px" }}
+            />
+            <TextField
+              fullWidth
+              id="outlined-basic"
+              label="Phone Number"
+              type="number"
+              style={{ paddingBottom: "10px" }}
+            />
+
             <TextField
               fullWidth
               id="outlined-basic"
@@ -69,63 +71,46 @@ export default function Login() {
               type="password"
               autoComplete="current-password"
             />
-            <div
+            <Typography
               style={{
-                display: "flex",
-                justifyContent: "space-between",
-                alignItems: "center",
+                fontWeight: 400,
+                fontSize: "12px",
+                textAlign: "left",
                 marginBottom: "20px",
-                marginTop: "20px",
+                marginTop: "10px",
               }}
             >
-              <Link
-                style={{
-                  // marginRight: isSmallScreen ? "40px" : "40px",
-                  color: "#000000",
-                  textDecoration: "none",
-                  fontSize: isSmallScreen ? "14px" : "16px",
-                }}
-              >
-                <Checkbox /> Remember Me
-              </Link>
-              <Link
-                style={{
-                  //paddingLeft: "150px",
-                  color: "#000000",
-                  textDecoration: "none",
-                  fontSize: isSmallScreen ? "14px" : "16px",
-                }}
-              >
-                Forgot Password
-              </Link>
-            </div>
+              To help with hosting fees, a small payment (£1.50) is due on
+              signup. This covers your contribution to the site costs for 12
+              months.
+            </Typography>
             <div
               className="justify-content-start"
               style={{ textAlign: "left" }}
             >
               <Button
+                href="/Payments1"
+                style={{
+                  backgroundColor: "#FCC822",
+                  color: "black",
+                  boxShadow:
+                    " 0px 10.450244903564453px 23.22276496887207px -6.966829299926758px #FBE18F",
+                  fontSize: "13px",
+                  lineHeight: "14px",
+                  width: "71px",
+                  height: "37px",
+                  fontWeight: 400,
+                  font: "Poppins",
+                }}
+              >
+                <b>Signup</b>
+              </Button>{" "}
+              <Button
                 href="/Login"
                 style={{
                   backgroundColor: "#FCC822",
-                  boxShadow:
-                    " 0px 10.450244903564453px 23.22276496887207px -6.966829299926758px #FBE18F",
-                  fontSize: "13px",
-                  lineHeight: "14px",
-                  width: "71px",
-                  height: "37px",
-                  fontWeight: 400,
-                  font: "Poppins",
                   color: "black",
                   marginRight: "10px",
-                }}
-              >
-                <b> Login</b>
-              </Button>
-              <Button
-                href="/Signup"
-                style={{
-                  backgroundColor: "#FCC822",
-                  color: "black",
                   boxShadow:
                     " 0px 10.450244903564453px 23.22276496887207px -6.966829299926758px #FBE18F",
                   fontSize: "13px",
@@ -136,20 +121,14 @@ export default function Login() {
                   font: "Poppins",
                 }}
               >
-                Signup
+                Login
               </Button>
             </div>
           </Box>
         </div>
 
         <div className="col-md-6">
-          {!isSmallScreen && (
-            <img
-              style={{ width: "100%", display: "block" }}
-              src={image}
-              alt="Image"
-            />
-          )}
+          <img style={{ width: "100%" }} src={image} alt="Image" />
         </div>
       </div>
     </div>

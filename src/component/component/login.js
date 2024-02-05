@@ -9,7 +9,7 @@ import {
   Link,
 } from "@mui/material";
 import image from "./images/image.png";
-import logo from "./images/header.png";
+import logo from "./images/logo.png";
 
 const theme = createTheme();
 export default function Login() {
@@ -30,7 +30,7 @@ export default function Login() {
             overflow: "auto", // Add overflow auto to handle vertical overflow
           }}
         >
-          <img src={logo} width="70%" alt="Logo" />
+          <img src={logo} alt="Logo" />
           <br />
           <div>
             <p
@@ -143,13 +143,7 @@ export default function Login() {
         </div>
 
         <div className="col-md-6">
-          {!isSmallScreen && (
-            <img
-              style={{ width: "100%", display: "block" }}
-              src={image}
-              alt="Image"
-            />
-          )}
+          <img style={{ width: "100%" }} src={image} alt="Image" />
         </div>
       </div>
     </div>

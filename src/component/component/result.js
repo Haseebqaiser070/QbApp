@@ -16,7 +16,6 @@ import {
 import Navbar from "./navbar";
 import footor from "./images/footor.png";
 import Mainnavbar from "./navbarmain";
-import Footer from "./footer";
 const tableData = [
   { date: "15-03-23", score: "3/10" },
   { date: "27-10-23", score: "8/10" },
@@ -161,7 +160,15 @@ export default function Result() {
         </div>
       </div>
       <div>
-        <Footer />{" "}
+        <img
+          style={{
+            marginTop: "50px",
+            marginBottom: "25px",
+            maxWidth: "100%",
+            height: "auto",
+          }}
+          src={footor}
+        />
       </div>
     </div>
   );

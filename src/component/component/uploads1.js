@@ -19,7 +19,7 @@ import pay from "./images/mobile-payment 1.png";
 import { Card } from "react-bootstrap";
 import Mainnavbar from "./navbarmain";
 import footor from "./images/footor.png";
-import Footer from "./footer";
+
 const theme = createTheme();
 export default function Uploads1() {
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
@@ -169,7 +169,10 @@ export default function Uploads1() {
           </div>
         </div>
         <div>
-          <Footer />{" "}
+          <img
+            style={{ marginTop: "50px", marginBottom: "25px" }}
+            src={footor}
+          />
         </div>
       </div>
     </div>

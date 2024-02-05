@@ -31,8 +31,6 @@ import Snavbar from "./navsignup";
 import pay from "./images/mobile-payment 1.png";
 import Mainnavbar from "./navbarmain";
 
-import Footer from "./footer";
-
 const theme = createTheme();
 export default function Creditcard() {
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
@@ -286,7 +284,15 @@ export default function Creditcard() {
         </div>
       </div>
       <div>
-        <Footer />
+        <img
+          style={{
+            marginTop: "50px",
+            marginBottom: "25px",
+            maxWidth: "100%",
+            height: "auto",
+          }}
+          src={footor}
+        />
       </div>
     </div>
   );

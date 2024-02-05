@@ -8,6 +8,8 @@ import {
   Stack,
   Typography,
   IconButton,
+  useMediaQuery,
+  createTheme,
   Card,
   CardContent,
   CardMedia,
@@ -16,54 +18,32 @@ import {
 } from "@mui/material";
 import PictureInPictureOutlinedIcon from "@mui/icons-material/PictureInPictureOutlined";
 //import { styled } from "@mui/system";
+
+import Footer from "./footer";
+import "./style.css";
 import image from "./images/image.png";
 import logo from "./images/logo.png";
 import Navbar from "./navbar";
 import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
+import footor from "./images/footor.png";
 import QueuePlayNextOutlinedIcon from "@mui/icons-material/QueuePlayNextOutlined";
-import footer from "./images/footor.png";
+import footer from "./images/footer.png";
 import LiveHelpOutlinedIcon from "@mui/icons-material/LiveHelpOutlined";
 import NaturePeopleOutlinedIcon from "@mui/icons-material/NaturePeopleOutlined";
 import Mainnavbar from "./navbarmain";
-const MyContainer = styled(Container)({
-  display: "flex",
-  justifyContent: "space-around",
-  flexWrap: "wrap",
-  marginTop: 4,
-});
 
-const MyCard = styled(Card)({
-  margin: 2,
-  textAlign: "center",
-  width: "250px",
-  height: " 300px",
-  top: "318px",
-  borderRadius: "20px",
-  backgroundColor: "#D4ECFF",
-  boxShadow: "0px 4px 4px 0px #D9ECFF80",
-});
+// const useStyles = {
+//   cardContent: {
+//     textAlign: "center",
+//     paddingTop: "5px",
+//   },
+// };
 
-const MyBox = styled(Box)({
-  height: "90px",
-  width: "90px",
-  borderRadius: "8px",
-  margin: "55px",
-  marginLeft: "80px",
-  backgroundColor: "#FCC832",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-});
-
-const useStyles = {
-  cardContent: {
-    textAlign: "center",
-    paddingTop: "5px",
-  },
-};
+const theme = createTheme();
 
 export default function Testknowledge() {
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
   const [searchTerm, setSearchTerm] = useState("");
   const [isSearchVisible, setIsSearchVisible] = useState(false);
 
@@ -79,18 +59,31 @@ export default function Testknowledge() {
 
   return (
     <div>
-      <div style={{ overflow: "hidden", marginTop: "100px" }}>
+      <div
+        className="main-container"
+        style={{
+          overflow: "hidden",
+          marginTop: "100px",
+          // @media (max-width: 768px) {
+          // {
+          //     padding: "0px" /* Adjust the padding value as needed */
+          // }
+
+          //   /* Additional mobile styles if necessary */
+          // }
+        }}
+      >
         <Mainnavbar />
-        <div className="row m-4 p-4">
-          <div className="col-md-7">
+        <div className="row m-4 ">
+          <div className="col-md-7 col-sm-7">
             <Typography
               style={{
                 fontWeight: 500,
-                fontSize: "35px",
+                lineHeight: isSmallScreen ? "35px" : "41px",
+                fontSize: isSmallScreen ? "25px" : "35px", // Relative font size
                 color: "#333333",
                 font: "Roboto",
                 //  marginLeft: 40,
-                lineHeight: "41.02px",
                 marginTop: "20px",
                 //marginBottom: "20px",
                 //textAlign: "center",
@@ -99,7 +92,7 @@ export default function Testknowledge() {
               Choose your Question Bank
             </Typography>
           </div>
-          <div className="col-md-5 d-flex justify-content-end">
+          <div className="col-md-5 col-sm-5 d-flex justify-content-end">
             <Stack direction="row" spacing={1} style={{ marginTop: "20px" }}>
               {isSearchVisible && (
                 <Box>
@@ -131,97 +124,263 @@ export default function Testknowledge() {
             </Stack>
           </div>
         </div>
-        <MyContainer>
+        <Container
+          style={{
+            display: "flex",
+            justifyContent: "space-around",
+            flexWrap: "wrap",
+            marginTop: isSmallScreen ? "50px" : "4px",
+            padding: "0 10px", // Add padding for all screens
+            "@media (max-width: 768px)": {
+              justifyContent: "center", // Center the items for smaller screens
+              padding: "0", // Remove padding for smaller screens
+              // marginTop: "10px",
+              justifyContent: "none",
+              width: "80%",
+            },
+          }}
+        >
           {/* Card 1 */}
           <a href="/QuizPage" style={{ textDecoration: "none" }}>
-            <MyCard>
-              <MyBox>
-                <LiveHelpOutlinedIcon />
-              </MyBox>
-              <CardContent sx={useStyles.cardContent}>
-                <Typography variant="h6" gutterBottom>
-                  Question Bank One
-                </Typography>
-                <Typography variant="body2" color="textSecondary">
-                  25 Questions
-                </Typography>
-              </CardContent>
-            </MyCard>
+            <Card
+              style={{
+                marginBottom: isSmallScreen ? "30px" : "20px",
+                textAlign: "center",
+                width: isSmallScreen ? "350px" : "250px",
+                height: isSmallScreen ? "250px" : " 300px",
+                top: "318px",
+                borderRadius: "20px",
+                backgroundColor: "#D4ECFF",
+                boxShadow: "0px 4px 4px 0px #D9ECFF80",
+                "@media (max-width: 768px)": {
+                  padding: "0", // Remove padding for smaller screens
+                  marginLeft: "20px",
+                },
+              }}
+            >
+              <Container
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  flexDirection: "column",
+                  marginTop: "50px",
+                }}
+              >
+                {/* Yellow Box */}
+                <Box
+                  style={{
+                    height: isSmallScreen ? "80px" : "90px",
+                    width: isSmallScreen ? "100px" : "90px",
+                    borderRadius: "8px",
+                    backgroundColor: "#FCC832",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    marginBottom: "20px",
+                  }}
+                >
+                  <LiveHelpOutlinedIcon />
+                </Box>
+                {/* Text */}
+                <div sx={{ textAlign: "center", paddingTop: "5px" }}>
+                  <Typography variant="h6" gutterBottom>
+                    Question Bank One
+                  </Typography>
+                  <Typography variant="body2" color="textSecondary">
+                    25 Questions
+                  </Typography>
+                </div>
+              </Container>
+            </Card>
           </a>
-          {/* Card 2 */}
           <a href="/QuizPage" style={{ textDecoration: "none" }}>
-            <MyCard>
-              <MyBox>
-                <PictureInPictureOutlinedIcon />
-              </MyBox>
-              <CardContent sx={useStyles.cardContent}>
-                <Typography variant="h6" gutterBottom>
-                  Question Bank Two
-                </Typography>
-                <Typography variant="body2" color="textSecondary">
-                  100 Questions{" "}
-                </Typography>
-              </CardContent>
-            </MyCard>
+            <Card
+              style={{
+                marginBottom: isSmallScreen ? "30px" : "20px",
+                textAlign: "center",
+                width: isSmallScreen ? "350px" : "250px",
+                height: isSmallScreen ? "250px" : " 300px",
+                top: "318px",
+                borderRadius: "20px",
+                backgroundColor: "#D4ECFF",
+                boxShadow: "0px 4px 4px 0px #D9ECFF80",
+                "@media (max-width: 768px)": {
+                  padding: "0", // Remove padding for smaller screens
+                  marginLeft: "20px",
+                },
+              }}
+            >
+              <Container
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  flexDirection: "column",
+                  marginTop: "50px",
+                }}
+              >
+                {/* Yellow Box */}
+                <Box
+                  style={{
+                    height: isSmallScreen ? "80px" : "90px",
+                    width: isSmallScreen ? "100px" : "90px",
+                    borderRadius: "8px",
+                    backgroundColor: "#FCC832",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    marginBottom: "20px",
+                  }}
+                >
+                  <LiveHelpOutlinedIcon />
+                </Box>
+                {/* Text */}
+                <div sx={{ textAlign: "center", paddingTop: "5px" }}>
+                  <Typography variant="h6" gutterBottom>
+                    Question Bank Two
+                  </Typography>
+                  <Typography variant="body2" color="textSecondary">
+                    10 Questions
+                  </Typography>
+                </div>
+              </Container>
+            </Card>
           </a>
-          {/* Card 3 */}
           <a href="/QuizPage" style={{ textDecoration: "none" }}>
-            <MyCard>
-              <MyBox>
-                <NaturePeopleOutlinedIcon />
-              </MyBox>
-              <CardContent sx={useStyles.cardContent}>
-                <Typography variant="h6" gutterBottom>
-                  Question Bank Three{" "}
-                </Typography>
-                <Typography variant="body2" color="textSecondary">
-                  48 Questions
-                </Typography>
-              </CardContent>
-            </MyCard>
+            <Card
+              style={{
+                marginBottom: isSmallScreen ? "30px" : "20px",
+                textAlign: "center",
+                width: isSmallScreen ? "350px" : "250px",
+                height: isSmallScreen ? "250px" : " 300px",
+                top: "318px",
+                borderRadius: "20px",
+                backgroundColor: "#D4ECFF",
+                boxShadow: "0px 4px 4px 0px #D9ECFF80",
+                "@media (max-width: 768px)": {
+                  padding: "0", // Remove padding for smaller screens
+                  marginLeft: "20px",
+                },
+              }}
+            >
+              <Container
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  flexDirection: "column",
+                  marginTop: "50px",
+                }}
+              >
+                {/* Yellow Box */}
+                <Box
+                  style={{
+                    height: isSmallScreen ? "80px" : "90px",
+                    width: isSmallScreen ? "100px" : "90px",
+                    borderRadius: "8px",
+                    backgroundColor: "#FCC832",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    marginBottom: "20px",
+                  }}
+                >
+                  <LiveHelpOutlinedIcon />
+                </Box>
+                {/* Text */}
+                <div sx={{ textAlign: "center", paddingTop: "5px" }}>
+                  <Typography variant="h6" gutterBottom>
+                    Question Bank Three
+                  </Typography>
+                  <Typography variant="body2" color="textSecondary">
+                    59 Questions
+                  </Typography>
+                </div>
+              </Container>
+            </Card>
           </a>
-          {/* Card 4 */}
           <a href="/QuizPage" style={{ textDecoration: "none" }}>
-            <MyCard>
-              <MyBox>
-                <QueuePlayNextOutlinedIcon />
-              </MyBox>
-              <CardContent sx={useStyles.cardContent}>
-                <Typography variant="h6" gutterBottom>
-                  Question Bank Four
-                </Typography>
-                <Typography variant="body2" color="textSecondary">
-                  32 Questions
-                </Typography>
-              </CardContent>
-            </MyCard>
+            <Card
+              style={{
+                marginBottom: isSmallScreen ? "30px" : "20px",
+                textAlign: "center",
+                width: isSmallScreen ? "350px" : "250px",
+                height: isSmallScreen ? "250px" : " 300px",
+                top: "318px",
+                borderRadius: "20px",
+                backgroundColor: "#D4ECFF",
+                boxShadow: "0px 4px 4px 0px #D9ECFF80",
+                "@media (max-width: 768px)": {
+                  padding: "0", // Remove padding for smaller screens
+                  marginLeft: "20px",
+                },
+              }}
+            >
+              <Container
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  flexDirection: "column",
+                  marginTop: "50px",
+                }}
+              >
+                {/* Yellow Box */}
+                <Box
+                  style={{
+                    height: isSmallScreen ? "80px" : "90px",
+                    width: isSmallScreen ? "100px" : "90px",
+                    borderRadius: "8px",
+                    backgroundColor: "#FCC832",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    marginBottom: "20px",
+                  }}
+                >
+                  <LiveHelpOutlinedIcon />
+                </Box>
+                {/* Text */}
+                <div sx={{ textAlign: "center", paddingTop: "5px" }}>
+                  <Typography variant="h6" gutterBottom>
+                    Question Bank Four
+                  </Typography>
+                  <Typography variant="body2" color="textSecondary">
+                    72 Questions
+                  </Typography>
+                </div>
+              </Container>
+            </Card>
           </a>
-        </MyContainer>
-        <div className="row m-4 p-4">
-          <div className="col-md-7">
+        </Container>
+        <div className="row m-4 ">
+          <div className="col-md-8 col-sm-7 d-flex justify-content-center align-items-center">
             <TextField
-              fullWidth
+              //fullWidth
               id="outlined-basic"
               label="Number of Questions"
               type="number"
               style={{
+                width: "80%",
                 paddingBottom: "10px",
-                marginLeft: "100px",
+                // marginLeft: "100px",
                 color: " #1C1C1C",
               }}
             />
           </div>
-          <div className="col-md-5 d-flex justify-content-center">
+          <div className="col-md-4 col-sm-5 d-flex justify-content-center">
             <Button
               style={{
                 backgroundColor: " #fcc822",
                 color: " #1c1c1c",
                 borderRadius: "13px",
                 font: "Poppins",
-                // padding: "15px",
+                //padding: "15px",
                 lineHeight: "52.5px",
                 fontWeight: 700,
-                fontSize: "15px",
+                marginTop: isSmallScreen ? "13px" : "0px",
+                fontSize: isSmallScreen ? "13px" : "15px",
                 width: "250px",
                 height: "60px",
                 float: "right",
@@ -233,19 +392,20 @@ export default function Testknowledge() {
             </Button>
           </div>
         </div>{" "}
-        <div >
-          <img
-            style={{
-              marginTop: "30px",
-              marginBottom: "15px",
-              width: "100%",
-              height: "auto",
-            }}
-            src={footer}
-            alt="Footer"
-          />
+        <div>
+          <Footer />
         </div>
       </div>
+      {/* <style>
+        {
+          @media (max-width: 768px) {
+            .main-container {
+              padding: "10px", // Adjust the padding value as needed 
+            }
+
+          }
+        }
+      </style> */}
     </div>
   );
 }

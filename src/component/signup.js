@@ -1,10 +1,19 @@
 import React from "react";
 import TextField from "@mui/material/TextField";
-import { Button, Box, Typography } from "@mui/material";
+import {
+  Button,
+  createTheme,
+  Box,
+  Typography,
+  useMediaQuery,
+} from "@mui/material";
 import image from "./images/image.png";
 import logo from "./images/header.png";
 
+const theme = createTheme();
 export default function Signup() {
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
+
   return (
     <div style={{ overflow: "hidden" }}>
       <div className="row">
@@ -18,7 +27,7 @@ export default function Signup() {
             paddingTop: "100px",
           }}
         >
-          <img src={logo} alt="Logo" style={{ height: "100px" }}/>
+          <img src={logo} width="70%" alt="Logo" />
           <br />
           <div>
             <p
@@ -126,9 +135,14 @@ export default function Signup() {
             </div>
           </Box>
         </div>
-
         <div className="col-md-6">
-          <img style={{ width: "100%" }} src={image} alt="Image" />
+          {!isSmallScreen && (
+            <img
+              style={{ width: "100%", display: "block" }}
+              src={image}
+              alt="Image"
+            />
+          )}
         </div>
       </div>
     </div>

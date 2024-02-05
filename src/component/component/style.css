@@ -5,11 +5,6 @@ body {
   font-family: Poppins;
   background-color: #a2c1e0;
 }
-.footerfix{
-  display: flex;
-  flex-direction: column;
-  margin: auto;
-}
 .btn {
   background-color: #fcc822;
   color: "black";
